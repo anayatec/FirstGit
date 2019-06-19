@@ -1,0 +1,20 @@
+ID: ZEDWP_CUSTOMER
+_schema-version: '2.0'
+version: 0.0.1
+
+modules:
+ - name: ZEDWC_CUSTOMER_DB
+   type: hdb
+   path: ZEDWC_CUSTOMER_DB
+   requires:
+    - name: hdi_ZEDWC_CUSTOMER_DB
+
+resources:
+ - name: hdi_ZEDWC_CUSTOMER_DB
+   parameters:
+      config:
+         schema: ZEDWC_CUSTOMER
+         makeUniqueName: false
+   properties:
+      hdi-container-name: ${service-name}
+   type: com.sap.xs.hdi-container
